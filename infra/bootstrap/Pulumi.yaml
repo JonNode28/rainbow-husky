@@ -1,0 +1,6 @@
+name: bootstrap
+runtime: nodejs
+description: Base infrastructure underpinning Rainbow Husky
+config:
+  github-token:
+    type: string
