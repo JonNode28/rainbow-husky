@@ -1,6 +1,6 @@
 # Project: Rainbow Husky
 
-Our goal is to create the tools needed for a peaceful transition to participatory direct democracy.
+Creating tools needed for a peaceful transition to participatory direct democracy in all aspects of life.
 
 ## Cold start
 

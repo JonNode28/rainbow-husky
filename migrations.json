@@ -2,19 +2,19 @@
   "migrations": [
     {
       "version": "15.7.0-beta.0",
-      "description": "Split global configuration files into individual project.json files. This migration has been added automatically to the beginning of your migration set to retroactively make them work with the new version of Nx.",
+      "description": "Split global configuration files (e.g., workspace.json) into individual project.json files.",
       "cli": "nx",
       "implementation": "./src/migrations/update-15-7-0/split-configuration-into-project-json-files",
       "package": "@nrwl/workspace",
       "name": "15-7-0-split-configuration-into-project-json-files"
     },
     {
-      "version": "15.7.0-beta.0",
-      "description": "Split global configuration files (e.g., workspace.json) into individual project.json files.",
       "cli": "nx",
-      "implementation": "./src/migrations/update-15-7-0/split-configuration-into-project-json-files",
-      "package": "@nrwl/workspace",
-      "name": "15-7-0-split-configuration-into-project-json-files"
+      "version": "15.5.4-beta.0",
+      "description": "Update `@nrwl/web/babel` preset to `@nrwl/js/babel` for projects that have a .babelrc file.",
+      "factory": "./src/migrations/update-15-5-4/update-babel-preset",
+      "package": "@nrwl/web",
+      "name": "update-babel-preset"
     },
     {
       "cli": "nx",
@@ -31,14 +31,6 @@
       "factory": "./src/migrations/update-15-6-3/webpack-config-setup",
       "package": "@nrwl/react",
       "name": "react-webpack-config-setup"
-    },
-    {
-      "cli": "nx",
-      "version": "15.5.4-beta.0",
-      "description": "Update `@nrwl/web/babel` preset to `@nrwl/js/babel` for projects that have a .babelrc file.",
-      "factory": "./src/migrations/update-15-5-4/update-babel-preset",
-      "package": "@nrwl/web",
-      "name": "update-babel-preset"
     }
   ]
 }
