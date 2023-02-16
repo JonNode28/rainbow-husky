@@ -2,8 +2,7 @@
 
 Creating tools needed for a peaceful transition to participatory direct democracy in all aspects of life.
 
-## Cold start
-
+## Cold start of a production instance
 1. Open a terminal
 2. Install Pulumi with `brew install pulumi`
    1. Optionally set up a [remote backend](https://www.pulumi.com/docs/intro/concepts/state/)
