@@ -7,4 +7,5 @@ phases:
     commands:
       - pulumi login s3://${PULUMI_STATE_S3_BUCKET}
       - cd infra/environment
+      - echo Initialising $CODEBUILD_WEBHOOK_HEAD_REF stack
       - pulumi up --skip-preview
