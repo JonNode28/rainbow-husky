@@ -14,6 +14,7 @@ phases:
           echo Initialising $BRANCH_NAME stack
           pulumi stack init $BRANCH_NAME
         fi
+      - echo Selecting $BRANCH_NAME stack
       - pulumi stack select $BRANCH_NAME
       - echo Applying changes to $BRANCH_NAME stack
       - pulumi up --skip-preview
