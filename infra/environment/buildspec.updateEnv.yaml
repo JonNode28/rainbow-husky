@@ -1,0 +1,19 @@
+version: 0.2
+env:
+  shell: bash
+
+phases:
+  build:
+    commands:
+      - pulumi login s3://${PULUMI_STATE_S3_BUCKET}
+      - cd infra/environment
+      - BRANCH_NAME=$(echo $CODEBUILD_WEBHOOK_HEAD_REF | cut -d'/' -f 3) # get feature branch name
+      - export PULUMI_CONFIG_PASSPHRASE=
+      - |
+        if [ "$CODEBUILD_WEBHOOK_EVENT" != "PULL_REQUEST_UPDATED" ]; then
+          echo Initialising $BRANCH_NAME stack
+          pulumi stack init $BRANCH_NAME
+        fi
+      - pulumi stack select $BRANCH_NAME
+      - echo Applying changes to $BRANCH_NAME stack
+      - pulumi up --skip-preview
