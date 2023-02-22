@@ -3,6 +3,9 @@ env:
   shell: bash
 
 phases:
+  install:
+    commands:
+      - yarn
   build:
     commands:
       - pulumi login s3://${PULUMI_STATE_S3_BUCKET}
