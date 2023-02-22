@@ -5,5 +5,5 @@ env:
 phases:
   build:
     commands:
-      - pulumi login s3://$PULUMI_STATE_S3_BUCKET
+      - pulumi login s3://${PULUMI_STATE_S3_BUCKET}
       - pulumi up --skip-preview
