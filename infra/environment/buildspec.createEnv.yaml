@@ -8,6 +8,7 @@ phases:
       - pulumi login s3://${PULUMI_STATE_S3_BUCKET}
       - cd infra/environment
       - BRANCH_NAME=$(echo $CODEBUILD_WEBHOOK_HEAD_REF | cut -d'/' -f 3) # get feature branch name
+      - export PULUMI_CONFIG_PASSPHRASE=
       - echo Initialising $BRANCH_NAME stack
       - pulumi stack init $BRANCH_NAME
       - pulumi up --skip-preview
