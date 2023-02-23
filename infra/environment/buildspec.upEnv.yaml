@@ -4,11 +4,9 @@ env:
 
 phases:
   install:
-    runtime-versions:
-      nodejs: 16
     commands:
+      - yarn config set cache-folder /root/.yarn-cache
       - yarn install --frozen-lockfile
-      #- yarn config set cache-folder /root/.yarn-cache
 
   build:
     commands:
@@ -25,3 +23,7 @@ phases:
       - pulumi stack select $BRANCH_NAME
       - echo Applying changes to $BRANCH_NAME stack
       - pulumi up --skip-preview
+
+  cache:
+    paths:
+      - '/root/.yarn-cache/**/*'
