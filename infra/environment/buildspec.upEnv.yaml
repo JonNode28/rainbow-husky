@@ -4,11 +4,14 @@ env:
 
 phases:
   install:
+    runtime-versions:
+      nodejs: 18
     commands:
       - yarn install --frozen-lockfile
+      #- yarn config set cache-folder /root/.yarn-cache
+
   build:
     commands:
-      - echo yarn -v
       - pulumi login s3://${PULUMI_STATE_S3_BUCKET}
       - cd infra/environment
       - BRANCH_NAME=$(echo $CODEBUILD_WEBHOOK_HEAD_REF | cut -d'/' -f 3) # get feature branch name
