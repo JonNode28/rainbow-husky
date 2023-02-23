@@ -24,6 +24,6 @@ phases:
       - echo Applying changes to $BRANCH_NAME stack
       - pulumi up --skip-preview
 
-  cache:
-    paths:
-      - '/root/.yarn-cache/**/*'
+cache:
+  paths:
+    - '/root/.yarn-cache/**/*'
