@@ -151,7 +151,7 @@
     "@pulumi/pulumi" "^3.0.0"
     semver "^5.4.0"
 
-"@pulumi/github@^5.2.1":
+"@pulumi/github@^5.4.0":
   version "5.4.0"
   resolved "https://registry.yarnpkg.com/@pulumi/github/-/github-5.4.0.tgz#a7e0e18a62688f1e2fcc8de02061e7549419cc08"
   integrity sha512-d2/Od/ZWi5s7k0sHREYsUKh9y97BqSeLCagywrXS7Vf4MhnWdJdylS3hi8lYNodbfD8rjVquFbg1ph8JlBx/Jw==
