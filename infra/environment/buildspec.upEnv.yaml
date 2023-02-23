@@ -5,7 +5,7 @@ env:
 phases:
   install:
     runtime-versions:
-      nodejs: 18
+      nodejs: 16
     commands:
       - yarn install --frozen-lockfile
       #- yarn config set cache-folder /root/.yarn-cache
