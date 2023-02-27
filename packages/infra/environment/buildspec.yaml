@@ -1,0 +1,23 @@
+version: 0.2
+env:
+  shell: bash
+
+phases:
+
+  install:
+    runtime-versions:
+      nodejs: 16
+    commands:
+      - yarn
+
+  pre_build:
+    commands:
+      - ./node_modules/.bin/nx run-many --target=test
+
+  build:
+    commands:
+      - ./node_modules/.bin/nx run-many --target=build
+
+artifacts:
+  files:
+    - "**/*"

@@ -2,6 +2,8 @@ import * as pulumi from "@pulumi/pulumi";
 import * as aws from "@pulumi/aws";
 import * as ssm from './ssm'
 
+let config = new pulumi.Config();
+
 export const codeBuildGithubCredentials = new aws.codebuild.SourceCredential("code-build-github-credentials", {
   authType: "PERSONAL_ACCESS_TOKEN",
   serverType: "GITHUB",
@@ -29,12 +31,15 @@ export const createEnvironmentBuildProject = new aws.codebuild.Project('rainbow-
   source: {
     type: 'GITHUB',
     location: 'https://github.com/JonNode28/rainbow-husky.git',
-    buildspec: 'infra/environment/buildspec.createEnv.yaml',
+    buildspec: 'packages/infra/environment/buildspec.upEnv.yaml',
   },
   environment: {
     type: 'LINUX_CONTAINER',
     computeType: 'BUILD_GENERAL1_SMALL',
-    image: 'public.ecr.aws/pulumi/pulumi-nodejs:3.52.1-ubi',
+    image: 'public.ecr.aws/pulumi/pulumi-nodejs:latest',
+    environmentVariables: [
+      { name: 'PULUMI_STATE_S3_BUCKET', type: 'PLAINTEXT', value: config.getSecret("pulumi-state-s3-bucket") || '' }
+    ]
   },
   artifacts: { type: 'NO_ARTIFACTS' },
 });
@@ -67,6 +72,8 @@ const buildPolicy = new aws.iam.Policy("rainbow-husky-code-build-policy", {
           "s3:ListBuckets",
           "s3:GetObject",
           "s3:PutObject",
+          "s3:DeleteObject",
+          "s3:DeleteObjectVersion",
           "s3:ListBucket",
           "kms:GenerateDataKey",
           "kms:Decrypt",

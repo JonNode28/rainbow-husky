@@ -1,0 +1,26 @@
+{
+  "name": "infra-environment",
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "packages/infra/environment/src",
+  "projectType": "library",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/js:tsc",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/packages/infra/environment",
+        "main": "packages/infra/environment/src/index.ts",
+        "tsConfig": "packages/infra/environment/tsconfig.lib.json",
+        "assets": ["packages/infra/environment/*.md"]
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["packages/infra/environment/**/*.ts"]
+      }
+    }
+  },
+  "tags": []
+}

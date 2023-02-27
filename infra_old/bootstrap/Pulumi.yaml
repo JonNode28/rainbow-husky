@@ -4,3 +4,5 @@ description: Base infrastructure underpinning Rainbow Husky
 config:
   github-token:
     type: string
+  pulumi-state-s3-bucket:
+    type: string

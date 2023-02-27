@@ -1,0 +1,7 @@
+encryptionsalt: v1:26NwTdCwkOg=:v1:G5+cT8t23tUUW/kh:V4oKj2dd1txWWVSmd4H2G2UV5Dn+Ow==
+config:
+  bootstrap:github-token:
+    secure: v1:njhIJB3KxICHPhjO:KEKIO1IU/yXV/H6OfaHaZbOFa034CSAuf1/rBWODafUBL8kNcZ1TNVIq4xfbH0kG1APdFGYG0D0=
+  bootstrap:pulumi-state-s3-bucket: rainbow-husky-pulumi-state
+  github:token:
+    secure: v1:8cDjH1EIWvBgfGVb:tdfPIXe8UT6YnpR8gFjX3ubIjKe0J/8Cc3cMLPFu35dSieW+PG5NwQ1B1KKz7M9A3qbsQVmQQc8=
