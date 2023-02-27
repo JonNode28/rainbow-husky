@@ -31,7 +31,7 @@ export const createEnvironmentBuildProject = new aws.codebuild.Project('rainbow-
   source: {
     type: 'GITHUB',
     location: 'https://github.com/JonNode28/rainbow-husky.git',
-    buildspec: 'infra/environment/buildspec.upEnv.yaml',
+    buildspec: 'packages/infra/environment/buildspec.upEnv.yaml',
   },
   environment: {
     type: 'LINUX_CONTAINER',
