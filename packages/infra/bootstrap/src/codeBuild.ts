@@ -36,7 +36,7 @@ export const createEnvironmentBuildProject = new aws.codebuild.Project('rainbow-
   environment: {
     type: 'LINUX_CONTAINER',
     computeType: 'BUILD_GENERAL1_SMALL',
-    image: 'public.ecr.aws/pulumi/pulumi-nodejs:latest',
+    image: '519396255280.dkr.ecr.eu-west-1.amazonaws.com/rainbow-husky-ecr-863f7ee:rainbow-husky-build-image',
     environmentVariables: [
       { name: 'PULUMI_STATE_S3_BUCKET', type: 'PLAINTEXT', value: config.getSecret("pulumi-state-s3-bucket") || '' }
     ]
