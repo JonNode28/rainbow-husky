@@ -20,3 +20,4 @@ Creating tools needed for a peaceful transition to participatory direct democrac
 8. [Register your GitHub access token (classic)](https://www.pulumi.com/registry/packages/github/installation-configuration/) with Pulumi by typing `pulumi config set github:token XXXXXXXXXXXXXX --secret`
    1. > Make sure your GitHub access token has the necessary permissions to create, manage and destroy repositories
 9. Create the bootstrap infrastructure by typing `pulumi up` and then confirming "yes"
+ 
