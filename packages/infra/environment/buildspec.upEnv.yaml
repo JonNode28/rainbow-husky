@@ -6,7 +6,7 @@ phases:
   install:
     commands:
       - yarn cache clean
-      - yarn install --frozen-lockfile --network-concurrency 1
+      - yarn install --frozen-lockfile
 
   build:
     commands:
