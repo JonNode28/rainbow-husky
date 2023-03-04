@@ -5,6 +5,7 @@ env:
 phases:
   install:
     commands:
+      - export FORCE_COLOR=0
       - yarn install --immutable
 
   build:
