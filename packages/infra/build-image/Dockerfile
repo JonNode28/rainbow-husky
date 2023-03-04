@@ -155,7 +155,16 @@ VOLUME /var/lib/docker
 #*********************** END  DOCKER  ****************************
 
 #=======================End of layer: corretto  =================
-FROM runtimes_n_corretto AS std_v6
+
+#****************        PULUMI    *********************************************
+
+FROM runtimes AS runtimes_n_corretto_n_pulumi
+
+RUN curl -fsSL https://get.pulumi.com | sh
+
+#*********************** END  PULUMI  ****************************
+
+FROM runtimes_n_corretto_n_pulumi AS std_v6
 
 # Activate runtime versions specific to image version.
 RUN n $NODE_18_VERSION
