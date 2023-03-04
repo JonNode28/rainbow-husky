@@ -5,8 +5,7 @@ env:
 phases:
   install:
     commands:
-      - yarn cache clean
-      - yarn install --frozen-lockfile
+      - yarn install --immutable
 
   build:
     commands:
