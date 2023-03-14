@@ -161,6 +161,7 @@ VOLUME /var/lib/docker
 FROM runtimes_n_corretto AS runtimes_n_corretto_n_pulumi
 
 RUN curl -fsSL https://get.pulumi.com | sh
+ENV PATH /root/.pulumi/bin:$PATH
 
 #*********************** END  PULUMI  ****************************
 
