@@ -103,6 +103,13 @@ const buildPolicy = new aws.iam.Policy('rainbow-husky-code-build-policy', {
         Resource:[
           ecr.dockerRepo.arn
         ]
+      },
+      {
+        Action: [ 'secretsmanager:GetSecretValue' ],
+        Effect:'Allow',
+        Resource:[
+          ssm.githubToken.arn
+        ]
       }
     ],
   },
