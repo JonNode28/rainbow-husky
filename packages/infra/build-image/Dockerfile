@@ -158,7 +158,7 @@ VOLUME /var/lib/docker
 
 #****************        PULUMI    *********************************************
 
-FROM runtimes AS runtimes_n_corretto_n_pulumi
+FROM runtimes_n_corretto AS runtimes_n_corretto_n_pulumi
 
 RUN curl -fsSL https://get.pulumi.com | sh
 
