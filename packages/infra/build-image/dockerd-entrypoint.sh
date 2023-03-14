@@ -6,8 +6,6 @@ set -e
 	--host=tcp://127.0.0.1:2375 \
 	--storage-driver=overlay2 &>/var/log/docker.log &
 
-export PATH="/root/.pulumi/bin:$PATH"
-
 tries=0
 d_timeout=60
 until docker info >/dev/null 2>&1
