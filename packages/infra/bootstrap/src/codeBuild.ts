@@ -40,7 +40,7 @@ export const createEnvironmentBuildProject = new aws.codebuild.Project('rainbow-
     image: '519396255280.dkr.ecr.eu-west-1.amazonaws.com/rainbow-husky-ecr-863f7ee:latest',
     environmentVariables: [
       { name: 'PULUMI_STATE_S3_BUCKET', type: 'PLAINTEXT', value: config.getSecret('pulumi-state-s3-bucket') || '' },
-      { name: 'GITHUB_TOKEN', type: 'SECRETS_MANAGER', value: ssm.githubToken.name || '' }
+      { name: 'GITHUB_TOKEN', type: 'SECRETS_MANAGER', value: ssm.githubToken.arn || '' }
     ]
   },
   artifacts: { type: 'NO_ARTIFACTS' },
