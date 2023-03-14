@@ -10,6 +10,7 @@ phases:
 
   build:
     commands:
+      - export PATH="/root/.pulumi/bin:$PATH"
       - pulumi login s3://${PULUMI_STATE_S3_BUCKET}
       - cd packages/infra/environment
       - BRANCH_NAME=$(echo $CODEBUILD_WEBHOOK_HEAD_REF | cut -d'/' -f 3) # get feature branch name
